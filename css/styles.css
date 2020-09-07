@@ -1,0 +1,73 @@
+* {
+  margin: 0;
+}
+
+body {
+  background-color: rgb(42, 189, 108);
+}
+
+h1,
+th,
+td,
+label {
+  font-family: "Montserrat", sans-serif;
+  color: white;
+  text-align: center;
+}
+
+.container {
+  height: 100vh;
+  padding: 20px;
+  margin-top: 20px;
+}
+
+.c-input {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.short-input {
+  width: 260px;
+}
+
+input,
+#button {
+  border: 1px solid #25692a;
+  border-radius: 4px;
+  display: inline-block;
+  cursor: pointer;
+  font-family: "Montserrat", sans-serif;
+  font-weight: bold;
+  font-size: 13px;
+  padding: 6px 10px;
+}
+
+table {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.btn-register {
+  border-radius: 4px;
+  color: white;
+  display: inline-block;
+  cursor: pointer;
+  font-family: "Montserrat", sans-serif;
+  font-weight: bold;
+  font-size: 20px;
+  padding: 6px 10px;
+}
+
+.register{
+  display: flex;
+  justify-content: center;
+}
+
+.log{
+  padding: 20px;
+  display: flex;
+  justify-content: flex-end;
+  color: white;
+}
