@@ -3,27 +3,28 @@ session_start();
 
 require_once 'db.php';
 
-$_SESSION['error'] = false;
-
-if(isset($_POST['submit'])){
-    if(empty($_POST['user']) || empty($_POST['password'])){
-        header('Location: index.php');
+if (isset($_POST['submit'])) {
+    if (empty($_POST['user']) || empty($_POST['password'])) {
+        header('Location: index.php?Empty=Please fill out the fields!');
     }
 
-$username = mysqli_real_escape_string($connectDB, $_POST['user']);
-$password = mysqli_real_escape_string($connectDB, $_POST['password']);
+    $username = mysqli_real_escape_string($connectDB, $_POST['user']);
+    $password = mysqli_real_escape_string($connectDB, $_POST['password']);
+    $username = stripslashes($username);
+    $password = stripslashes($password);
 
-$query = "SELECT * FROM users WHERE username = '$username' AND password = '$password' ";
+    if ($username != "" && $password != "") {
 
-if (!mysqli_query($connectDB, $query)) {
-    die('erro');
-} else {
-    $result = mysqli_query($connectDB,$query);
-    while ($row = $result->fetch_assoc()) {
-        echo $row;
+        $query = "SELECT * FROM users WHERE username = '$username' AND password = '$password' ";
+
+        if (!mysqli_query($connectDB, $query)) {
+            die('erro');
+        } else {
+            $result = mysqli_query($connectDB, $query);
+            $row = $result->fetch_assoc();
+            $_SESSION['user'] = $username;
+            header('Location: page.php');
+        }
+
     }
-    $_SESSION['user'] = $username;
-    header('Location: page.php');
-}
-
 }

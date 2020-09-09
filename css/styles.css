@@ -60,14 +60,21 @@ table {
   padding: 6px 10px;
 }
 
-.register{
+.register {
   display: flex;
   justify-content: center;
 }
 
-.log{
+.log {
   padding: 20px;
   display: flex;
   justify-content: flex-end;
   color: white;
+}
+
+.empty-field {
+  text-align: center;
+  color: red;
+  padding: 10px;
+  font-weight: bold;
 }

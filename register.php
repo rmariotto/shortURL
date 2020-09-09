@@ -17,11 +17,11 @@ session_start();
             <form method="post" action="reg.php">
                 <p>
                     <label>Username:</label>
-                    <input type="text" id="user" name="user"/>
+                    <input type="text" id="user" name="user" placeholder="username"/>
                 </p>
                 <p>
                     <label>Password:</label>
-                    <input type="password" id="password" name="password"/>
+                    <input type="password" id="password" name="password" placeholder="password"/>
                 </p>
                 <p>
                  <input type="submit" name="submit" id="button" value="register">
@@ -29,8 +29,14 @@ session_start();
             </form>    
             
         </div>
-        <div>
-
+        <div class="empty-field">
+            <?php
+            if ($_GET['Empty'] == true) {
+            ?>
+                <div><?php echo $_GET['Empty'] ?></div>
+            <?php
+            }
+            ?>
         </div>
     </div>
 

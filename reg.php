@@ -1,6 +1,11 @@
 <?php
 require_once 'db.php';
 
+if (isset($_POST['submit'])) {
+    if (empty($_POST['user']) || empty($_POST['password'])) {
+        header('Location: register.php?Empty=Please fill out the fields!');
+    }
+
 $query = "SELECT * FROM users WHERE username = '$_POST[user]' ";
 
 $result = $connectDB->query($query);
@@ -19,4 +24,5 @@ if($count == 1){
     } else {
         die('error to create user');
     }
+}
 }

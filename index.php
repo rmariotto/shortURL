@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -7,32 +10,35 @@
         <link rel="stylesheet" href="css/styles.css">
     </head>
     <body>
-    
+
     <div class="container">
         <h1>Login</h1>
         <div class="c-input">
             <form method="post" action="login.php">
                 <p>
                     <label>Username:</label>
-                    <input type="text" id="user" name="user"/>
+                    <input type="text" id="user" name="user" placeholder="username" />
                 </p>
                 <p>
                     <label>Password:</label>
-                    <input type="password" id="password" name="password"/>
+                    <input type="password" id="password" name="password" placeholder="password" />
                 </p>
-                <?php if ( ! empty( $_SESSION['error'] ) ) :?>
-					<tr>
-						<td style="color: red;"><?php echo $_SESSION['error'];?></td>
-						<?php $_SESSION['error'] = ''; ?>
-					</tr>
-				<?php endif; ?>
                 <p>
                  <input type="submit" name="submit" id="submit" value="login">
                 </p>
-            </form>    
+            </form>
         </div>
         <div class="register">
             <a href="register.php" class="btn-register">register</a>
+        </div>
+        <div class="empty-field">
+            <?php
+            if ($_GET['Empty'] == true) {
+            ?>
+                <div><?php echo $_GET['Empty'] ?></div>
+            <?php
+            }
+            ?>
         </div>
     </div>
 
