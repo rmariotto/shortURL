@@ -31,9 +31,9 @@ session_start();
         </div>
         <div class="empty-field">
             <?php
-            if ($_GET['Empty'] == true) {
+            if ($_GET['Emptyreg'] == true) {
             ?>
-                <div><?php echo $_GET['Empty'] ?></div>
+                <div><?php echo $_GET['Emptyreg'] ?></div>
             <?php
             }
             ?>

@@ -12,7 +12,7 @@ if (isset($_POST['submit'])) {
         $username = stripslashes($username);
         $password = stripslashes($password);
 
-        $query = "SELECT * FROM users WHERE username = '$username'";
+        $query = "SELECT id,password FROM users WHERE username = '$username'" ;
         $result = mysqli_query($connectDB, $query) or die(mysqli_error($connectDB));
 
         if (mysqli_fetch_assoc($result)) {
