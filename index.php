@@ -40,6 +40,15 @@ session_start();
             }
             ?>
         </div>
+        <div class="empty-field">
+            <?php
+            if ($_GET['notMatch'] == true) {
+            ?>
+                <div><?php echo $_GET['notMatch'] ?></div>
+            <?php
+            }
+            ?>
+        </div>
     </div>
 
     </body>
