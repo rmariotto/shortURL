@@ -24,30 +24,15 @@ if (!mysqli_query($connectDB, $query)) {
     <nav>
         <a class="log" href="logout.php">logout</a>
     </nav>
-    
+
     <div class="container">
         <h1>Your short URL!</h1>
         <div class="c-input">
                 <input class="short-input" type="text" name="url" id="url" value="http://localhost:8080/redir.php?c=<?php echo $code; ?>">
             </div>
-        <div>
-                <table>
-                    <tr>
-                        <th>URLs</th>
-                    </tr>
-                    <?php
-                    $sql = "SELECT url FROM shorten_url";
-                    $result = $connectDB->query($sql);
-
-                    if($result->num_rows>0){
-                        while($row = $result->fetch_assoc()){
-                            echo "<tr><td>" . $row['url'] . "</td><td>";
-                        }
-                    }
-                    ?>
-                </table>    
-
-        </div>
+            <div class="register">
+                 <a href="urls.php" class="btn-register">all your urls</a>
+            </div>
     </div>
 
     </body>
