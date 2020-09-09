@@ -38,6 +38,15 @@ session_start();
             }
             ?>
         </div>
+        <div class="empty-field">
+            <?php
+            if ($_GET['invalid'] == true) {
+            ?>
+                <div><?php echo $_GET['invalid'] ?></div>
+            <?php
+            }
+            ?>
+        </div>
     </div>
 
     </body>

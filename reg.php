@@ -12,7 +12,7 @@ $result = $connectDB->query($query);
 $count = mysqli_num_rows($result);
 
 if($count == 1){
-    echo "Username already exists";
+    header('Location: register.php?invalid=Username already exists');
 } else {
     $password = $_POST['password'];
     $hash = password_hash($password, PASSWORD_BCRYPT);
